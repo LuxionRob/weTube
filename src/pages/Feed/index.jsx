@@ -13,7 +13,6 @@ const Feed = () => {
     try {
       const { data } = await getVideos({ maxResults: 50, q: selectedCategory })
       setVideos(data.items)
-      console.log(data.items)
     } catch (error) {
       console.error(error)
     }

@@ -1,0 +1,9 @@
+@import '../../utils/responsiveQuery.scss';
+
+#no-sidebar-layout {
+  .main-section {
+    @include mobile {
+      display: block;
+    }
+  }
+}

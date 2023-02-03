@@ -1,4 +1,7 @@
 @import '../../utils/responsiveQuery.scss';
 
 #feed {
+  @include mobile {
+    flex-flow: column;
+  }
 }

@@ -37,10 +37,10 @@ const VideoCard = ({
           </Link>
         </Box>
         <Box className="channel-info">
-          <Link to={demoChannelUrl} className="channel-title">
+          <Box className="channel-title">
             {snippet?.channelTitle}
-          </Link>
-          <CheckCircle className="channel-icon" />
+            <CheckCircle className="channel-icon" />
+          </Box>
         </Box>
       </CardContent>
     </Card>

@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Box } from '@mui/material'
 import { Feed, VideoDetail, ChannelDetail, SearchResult } from './pages'
-import { DefaultLayout } from './layouts'
+import { DefaultLayout, NoSidebarLayout } from './layouts'
 import Category from './context/Category'
 
 const App = () => (
@@ -12,9 +12,11 @@ const App = () => (
         <Routes>
           <Route path="" element={<DefaultLayout />}>
             <Route path="/" exact element={<Feed />} />
+            <Route path="/search/:searchTerm" element={<SearchResult />} />
+          </Route>
+          <Route path="" element={<NoSidebarLayout />}>
             <Route path="/video/:id" element={<VideoDetail />} />
             <Route path="/channel/:id" element={<ChannelDetail />} />
-            <Route path="/search/:searchTerm" element={<SearchResult />} />
           </Route>
         </Routes>
       </Box>
