@@ -1,13 +1,14 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import { Stack, Box, Typography } from '@mui/material'
+import { CategoryContext } from '../../context/Category'
 import { categories } from '../../utils/constant'
 import './style.scss'
 
 const SideBar = () => {
-  const [selected, setSelected] = useState('New')
+  const { selectedCategory, setSelectedCategory } = useContext(CategoryContext)
 
   const onSidebarItemClick = (name) => {
-    setSelected(name)
+    setSelectedCategory(name)
   }
 
   return (
@@ -15,7 +16,7 @@ const SideBar = () => {
       <Stack className="list-item">
         {categories.map((category) => (
           <button
-            className={`category-btn ${selected === category.name ? 'selected' : ''}`}
+            className={`category-btn ${selectedCategory === category.name ? 'selected' : ''}`}
             key={category.name}
             onClick={() => {
               onSidebarItemClick(category.name)

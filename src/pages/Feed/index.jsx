@@ -1,14 +1,34 @@
-import React from 'react'
-import { Stack, Typography } from '@mui/material'
-
+import React, { useEffect, useState, useContext } from 'react'
+import { Stack, Typography, Box } from '@mui/material'
+import { Videos } from '../../components'
+import { CategoryContext } from '../../context/Category'
+import { getNewVideos } from '../../api'
 import './style.scss'
 
 const Feed = () => {
+  const [videos, setVideos] = useState([])
+  const { selectedCategory } = useContext(CategoryContext)
+
+  const fetchSuggestedVideos = async () => {
+    try {
+      const { data } = await getNewVideos('search', { maxResults: 50, q: selectedCategory })
+      setVideos(data.items)
+      console.log(data.items)
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  useEffect(() => {
+    fetchSuggestedVideos()
+  }, [selectedCategory])
+
   return (
-    <Stack id="feed">
-      <Typography variant="h3" p={4} color="white" fontWeight="bold">
-        New <span className="color-red">Videos</span>
+    <Stack id="feed" direction="column" p={4}>
+      <Typography variant="h3" color="white" fontWeight="bold" marginBottom={4}>
+        {selectedCategory} <span className="color-red">Videos</span>
       </Typography>
+      <Videos videos={videos} />
     </Stack>
   )
 }

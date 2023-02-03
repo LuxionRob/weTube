@@ -35,6 +35,9 @@
     }
     @include mobile {
       height: auto;
+      flex-flow: row;
+      overflow-x: scroll;
+      width: 100vw;
     }
 
     .selected {

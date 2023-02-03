@@ -1,5 +1,10 @@
+@import '../../utils/responsiveQuery.scss';
+
 #default-layout {
   .main-section {
     display: flex;
+    @include mobile {
+      display: block;
+    }
   }
 }
