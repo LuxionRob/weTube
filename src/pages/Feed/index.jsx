@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from 'react'
 import { Stack, Typography, Box } from '@mui/material'
 import { Videos } from '../../components'
 import { CategoryContext } from '../../context/Category'
-import { getNewVideos } from '../../api'
+import { getVideos } from '../../api'
 import './style.scss'
 
 const Feed = () => {
@@ -11,7 +11,7 @@ const Feed = () => {
 
   const fetchSuggestedVideos = async () => {
     try {
-      const { data } = await getNewVideos('search', { maxResults: 50, q: selectedCategory })
+      const { data } = await getVideos({ maxResults: 50, q: selectedCategory })
       setVideos(data.items)
       console.log(data.items)
     } catch (error) {

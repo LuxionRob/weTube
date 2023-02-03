@@ -34,13 +34,13 @@ const VideoCard = ({
             <Typography variant="subtitle1" fontWeight="bold" color="#eee">
               {snippet?.title}
             </Typography>
-            <Box className="channel-info">
-              <Link to={demoChannelUrl} className="channel-title">
-                {snippet?.channelTitle}
-              </Link>
-              <CheckCircle className="channel-icon" />
-            </Box>
           </Link>
+        </Box>
+        <Box className="channel-info">
+          <Link to={demoChannelUrl} className="channel-title">
+            {snippet?.channelTitle}
+          </Link>
+          <CheckCircle className="channel-icon" />
         </Box>
       </CardContent>
     </Card>

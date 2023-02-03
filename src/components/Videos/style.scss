@@ -7,11 +7,10 @@
     gap: 2rem;
     padding: 2rem;
 
-    @include tablet {
+    @include mobile {
       grid-template-columns: 1fr 1fr;
     }
-
-    @include mobile {
+    @include tablet {
       grid-template-columns: 1fr 1fr;
     }
   }

@@ -1,0 +1,49 @@
+@import '../../utils/responsiveQuery.scss';
+
+#feed {
+  .channel-grid-card {
+    box-shadow: none;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+
+    @include mobile {
+      flex-basis: 48%;
+    }
+    .channel-thumbnail {
+      width: 20rem;
+      height: 20rem;
+      border-radius: 50%;
+    }
+
+    .channel-content {
+      margin-top: 2rem;
+      background-color: #1e1e1e;
+
+      .MuiTypography-subtitle1 {
+        font-size: 1.6rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-break: break-word;
+      }
+
+      .channel-title {
+        text-align: center;
+        .channel-name {
+          color: #eee;
+          font-size: 1.6rem;
+          font-weight: bold;
+        }
+        .channel-icon {
+          color: #eeee;
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+}

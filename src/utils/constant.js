@@ -29,6 +29,7 @@ export const categories = [
   { name: 'Comedy', icon: <TheaterComedyIcon /> },
   { name: 'Gym', icon: <FitnessCenterIcon /> },
   { name: 'Crypto', icon: <DeveloperModeIcon /> },
+  { name: 'Nika Linh Lan', icon: <DeveloperModeIcon /> },
 ]
 
 export const demoThumbnailUrl = 'https://i.ibb.co/G2L2Gwp/API-Course.png'
