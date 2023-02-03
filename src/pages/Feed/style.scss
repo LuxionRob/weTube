@@ -1,0 +1,10 @@
+@import '../../utils/responsiveQuery.scss';
+
+#feed {
+  @include desktop {
+    flex-flow: row;
+  }
+  @include mobile {
+    flex-flow: column;
+  }
+}
