@@ -7,7 +7,7 @@ const instance = axios.create({
   params: {
     maxResults: 50,
   },
-  timeout: 1000,
+  timeout: 5000,
   headers: {
     'X-RapidAPI-Key': process.env.REACT_APP_RAPID_KEY,
     'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com',
