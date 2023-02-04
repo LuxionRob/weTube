@@ -6,13 +6,19 @@ import './style.scss'
 
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState('')
+  const router = useNavigate()
 
   const onSearchTermChange = (e) => {
     setSearchTerm(e.target.value)
   }
-
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (searchTerm) {
+      router(`/search/${searchTerm}`)
+    }
+  }
   return (
-    <Paper id="search" component="form" onSubmit={() => {}}>
+    <Paper id="search" component="form" onSubmit={handleSubmit}>
       <input
         className="search-bar"
         type="text"

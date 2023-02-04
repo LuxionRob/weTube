@@ -1,17 +1,16 @@
-import React, { useEffect, useState, useContext } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import { Stack, Typography } from '@mui/material'
 import { Videos } from '../../components'
-import { CategoryContext } from '../../context/Category'
 import { getVideos } from '../../api'
 import './style.scss'
 
-const Feed = () => {
+const SearchResult = () => {
   const [videos, setVideos] = useState([])
-  const { selectedCategory } = useContext(CategoryContext)
-
+  const { searchTerm } = useParams()
   const fetchSuggestedVideos = async () => {
     try {
-      const { data } = await getVideos({ maxResults: 50, q: selectedCategory })
+      const { data } = await getVideos({ maxResults: 50, q: searchTerm })
       setVideos(data.items)
     } catch (error) {
       console.error(error)
@@ -20,16 +19,16 @@ const Feed = () => {
 
   useEffect(() => {
     fetchSuggestedVideos()
-  }, [selectedCategory])
+  }, [searchTerm])
 
   return (
     <Stack id="feed" direction="column" p={4}>
       <Typography variant="h3" color="white" fontWeight="bold" marginBottom={4}>
-        {selectedCategory} <span className="color-red">Videos</span>
+        Search for <span className="color-red">{searchTerm}</span> videos
       </Typography>
       <Videos videos={videos} />
     </Stack>
   )
 }
 
-export default Feed
+export default SearchResult
