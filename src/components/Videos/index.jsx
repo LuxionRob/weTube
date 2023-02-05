@@ -1,5 +1,5 @@
 import React from 'react'
-import { Stack, Box } from '@mui/material'
+import { Box } from '@mui/material'
 import { VideoCard, ChannelCard } from '../'
 import './style.scss'
 const Videos = ({ videos, direction }) => {

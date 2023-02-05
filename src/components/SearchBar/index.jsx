@@ -1,4 +1,4 @@
-import React, { useState, createRef, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Paper, Box } from '@mui/material'
 import { Search, CloseRounded } from '@mui/icons-material'
@@ -24,10 +24,8 @@ const SearchBar = () => {
   }
 
   useEffect(() => {
-    console.log(window.innerWidth < 480)
     setIsMobile(window.innerWidth < 480)
     window.onresize = () => {
-      console.log(window.innerWidth)
       setIsMobile(window.innerWidth < 480)
     }
   }, [])

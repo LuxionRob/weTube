@@ -13,6 +13,14 @@
   justify-content: space-between;
   align-items: center;
   z-index: 10;
+  .search-bar {
+    border: none;
+    outline: none;
+    width: 35rem;
+    @include tablet {
+      width: 20rem;
+    }
+  }
   @include mobile {
     border-radius: 0;
     position: fixed;
