@@ -12,9 +12,9 @@ const App = () => (
         <Routes>
           <Route path="" element={<DefaultLayout />}>
             <Route path="/" exact element={<Feed />} />
-            <Route path="/search/:searchTerm" element={<SearchResult />} />
           </Route>
           <Route path="" element={<NoSidebarLayout />}>
+            <Route path="/search/:searchTerm" element={<SearchResult />} />
             <Route path="/video/:id" element={<VideoDetail />} />
             <Route path="/channel/:id" element={<ChannelDetail />} />
           </Route>
