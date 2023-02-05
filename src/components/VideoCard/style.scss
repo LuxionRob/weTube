@@ -2,19 +2,22 @@
 
 .main-section {
   .video-grid-card {
-    flex-basis: 22%;
     box-shadow: none;
 
-    @include mobile {
-      flex-basis: 48%;
-    }
     .video-thumbnail {
       height: 20.25rem;
+      @include mobile {
+        height: 10rem;
+      }
     }
 
     .video-content {
       background-color: #1e1e1e;
       height: 106px;
+      @include mobile {
+        padding: 0;
+        padding-top: 1rem;
+      }
 
       .MuiTypography-subtitle1 {
         font-size: 1.6rem;
@@ -36,6 +39,22 @@
         .channel-icon {
           color: #dddd;
         }
+      }
+    }
+  }
+}
+
+#video-detail-page {
+  @include tablet {
+    .video-grid-card {
+      display: flex;
+      background-color: transparent;
+      .video-thumbnail {
+        height: 15rem;
+        width: 26.7rem;
+      }
+      .video-content {
+        height: 100%;
       }
     }
   }

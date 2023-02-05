@@ -32,10 +32,11 @@ export const categories = [
   { name: 'Nika Linh Lan', icon: <DeveloperModeIcon /> },
 ]
 
-export const demoThumbnailUrl = 'https://i.ibb.co/G2L2Gwp/API-Course.png'
-export const demoChannelUrl = '/channel/UCmXmlB4-HJytD7wek0Uo97A'
-export const demoVideoUrl = '/video/GDa8kZLNhJ4'
-export const demoChannelTitle = 'JavaScript Mastery'
-export const demoVideoTitle =
-  'Build and Deploy 5 JavaScript & React API Projects in 10 Hours - Full Course | RapidAPI'
-export const demoProfilePicture = 'http://dergipark.org.tr/assets/app/images/buddy_sample.png'
+export const demoThumbnailUrl =
+  'https://i.ytimg.com/vi/09R8_2nJtjg/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDUBx6iiDGIsqHST_wdeoyuHSnmWA'
+export const demoChannelUrl = '/channel/UCBVjMGOIkavEAhyqpxJ73Dw'
+export const demoVideoUrl = '/video/09R8_2nJtjg'
+export const demoChannelTitle = 'Default Channel Title'
+export const demoVideoTitle = 'Demo Video Title'
+export const demoProfilePicture =
+  'https://yt3.googleusercontent.com/CL8tVHSaAetXksR5I_RCn1tgfvrfRfyeoVasD4c3Vav4-ikrZA0LzDZdIgg4tcDf90-yPQpndA=s88-c-k-c0x00ffffff-no-rj'

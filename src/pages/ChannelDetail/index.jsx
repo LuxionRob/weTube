@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { Box, Stack, Card, CardMedia, Typography } from '@mui/material'
+import { Box, Stack, CardMedia, Typography } from '@mui/material'
 import { CheckCircle } from '@mui/icons-material'
-import { Videos } from '../../components'
+import { Videos, Loading } from '../../components'
 import { numberWithDot } from '../../utils'
 import { getChannelDetail, getChannelVideo } from '../../api/channelDetail'
 import './style.scss'
@@ -10,21 +10,28 @@ import './style.scss'
 const ChannelDetail = () => {
   const [channelDetail, setChannelDetail] = useState({})
   const [channelVideo, setChannelVideo] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
   const { id } = useParams()
 
   const fetchChannelDetail = async () => {
     try {
+      setIsLoading(true)
       const { data } = await getChannelDetail({ id })
       setChannelDetail(data.items[0])
+      setIsLoading(false)
     } catch (error) {
+      setIsLoading(false)
       console.error(error)
     }
   }
   const fetchChannelVideo = async () => {
     try {
+      setIsLoading(true)
       const { data } = await getChannelVideo({ channelId: id })
       setChannelVideo(data.items)
+      setIsLoading(false)
     } catch (error) {
+      setIsLoading(false)
       console.error(error)
     }
   }
@@ -33,7 +40,9 @@ const ChannelDetail = () => {
     fetchChannelVideo()
   }, [id])
 
-  return (
+  return isLoading ? (
+    <Loading />
+  ) : (
     <Stack id="channel-page">
       <Box className="channel">
         <div className="channel-banner" />

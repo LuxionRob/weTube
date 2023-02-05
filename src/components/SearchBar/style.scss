@@ -1,3 +1,4 @@
+@import '../../utils/responsiveQuery.scss';
 #search {
   border-radius: 2rem;
   font-size: 1.6rem;
@@ -7,7 +8,9 @@
   padding-left: 1.5rem;
   display: flex;
   justify-content: space-between;
-
+  @include mobile {
+    display: none;
+  }
   .search-icon {
     padding: 1rem;
     width: 2rem;

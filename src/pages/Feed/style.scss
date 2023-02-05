@@ -1,7 +1,28 @@
 @import '../../utils/responsiveQuery.scss';
 
 #feed {
+  padding-inline: 8rem;
+  .MuiTypography-h3 {
+    color: white;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  @include tablet {
+    padding-inline: 0;
+    .MuiTypography-h3 {
+      margin-left: 2rem;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+    }
+  }
   @include mobile {
+    padding-inline: 0;
     flex-flow: column;
+
+    .MuiTypography-h3 {
+      margin-left: 2rem;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+    }
   }
 }

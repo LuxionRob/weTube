@@ -1,3 +1,5 @@
+@import '../../utils//responsiveQuery.scss';
+
 #channel-page {
   display: flex;
   flex-direction: column;
@@ -6,10 +8,16 @@
     min-width: 100vw;
     height: 35rem;
     background: linear-gradient(90deg, rgba(158, 32, 254, 1) 0%, rgba(255, 0, 52, 1) 100%);
+    @include mobile {
+      display: none;
+    }
   }
   .channel-sign {
     position: relative;
     top: -6rem;
+    @include mobile {
+      top: 0;
+    }
 
     .channel-thumbnail {
       width: 20rem;

@@ -1,17 +1,47 @@
 @import '../../utils/responsiveQuery.scss';
 
 #video-detail-page {
-  flex-flow: row;
+  padding-inline: 8rem;
+  @include tablet {
+    padding-inline: 0;
+  }
   @include mobile {
-    flex-direction: column;
+    padding-inline: 0;
+  }
+  .container {
+    flex-direction: row;
+    @include tablet {
+      flex-direction: column;
+    }
+    @include mobile {
+      flex-direction: column;
+    }
   }
 
-  .player {
-    height: 77vh !important;
-    width: 136.9vh !important;
+  .player-container {
+    position: sticky;
+    top: 10.6rem;
+    width: 100%;
     @include tablet {
-      .player {
-        height: 45vh !important;
+      position: relative;
+      top: 0;
+    }
+    @include mobile {
+      position: relative;
+      top: 0;
+    }
+    .player {
+      height: 77vh !important;
+      width: 136.9vh !important;
+      @include tablet {
+        max-width: 100vw !important;
+        width: 100vw !important;
+        height: 56.25vw !important;
+      }
+      @include mobile {
+        max-width: 100vw !important;
+        width: 100vw !important;
+        height: 56.25vw !important;
       }
     }
   }
@@ -31,5 +61,11 @@
   .suggest-video-list {
     overflow-y: auto;
     height: 90vh;
+    @include tablet {
+      height: auto;
+    }
+    @include mobile {
+      height: auto;
+    }
   }
 }

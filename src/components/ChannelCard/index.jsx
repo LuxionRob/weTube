@@ -3,27 +3,25 @@ import { Link } from 'react-router-dom'
 import { Box, Typography, Card, CardMedia, CardContent } from '@mui/material'
 import { CheckCircle } from '@mui/icons-material'
 import './style.scss'
-
-const ChannelCard = ({
-  channel: {
-    id: { channelId },
-    snippet,
-  },
-}) => {
+import { demoChannelUrl, demoProfilePicture, demoChannelTitle } from '../../utils/constant'
+const ChannelCard = ({ channel }) => {
   return (
     <Card className="channel-grid-card">
-      <Link to={channelId && `/channel/${channelId}`}>
+      <Link to={channel?.id?.channelId ? `/channel/${channel?.id?.channelId}` : demoChannelUrl}>
         <CardMedia
           className="channel-thumbnail"
-          image={snippet?.thumbnails?.high?.url}
-          alt={snippet?.title}
+          image={channel?.snippet?.thumbnails?.high?.url || demoProfilePicture}
+          alt={channel?.snippet?.title}
           component="img"
         />
       </Link>
       <Box className="channel-content">
         <Box className="channel-title">
-          <Link className="channel-name" to={`/channel/${channelId}`}>
-            {snippet?.title}
+          <Link
+            className="channel-name"
+            to={channel?.id?.channelId ? `/channel/${channel?.id?.channelId}` : demoChannelUrl}
+          >
+            {channel?.snippet?.title || demoChannelTitle}
           </Link>
           <CheckCircle className="channel-icon" />
         </Box>

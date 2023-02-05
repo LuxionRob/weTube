@@ -19,5 +19,7 @@
 }
 
 #channel-page {
-  padding-inline: 25rem;
+  @include desktop {
+    padding-inline: 25rem;
+  }
 }
