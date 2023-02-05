@@ -6,7 +6,7 @@ import './style.scss'
 
 const DefaultLayout = () => {
   return (
-    <Box id="default-layout">
+    <Box id="default-layout" height="100%" minHeight="100vh">
       <Navbar />
       <Box className="main-section">
         <Sidebar />

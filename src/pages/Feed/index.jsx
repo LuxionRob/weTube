@@ -23,7 +23,7 @@ const Feed = () => {
   }, [selectedCategory])
 
   return (
-    <Stack id="feed" direction="column" p={4}>
+    <Stack id="feed" direction="column" p={8}>
       <Typography variant="h3" color="white" fontWeight="bold" marginBottom={4}>
         {selectedCategory} <span className="color-red">Videos</span>
       </Typography>

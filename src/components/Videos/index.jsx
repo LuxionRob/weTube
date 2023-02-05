@@ -2,9 +2,9 @@ import React from 'react'
 import { Stack, Box } from '@mui/material'
 import { VideoCard, ChannelCard } from '../'
 import './style.scss'
-const Videos = ({ videos }) => {
+const Videos = ({ videos, direction }) => {
   return (
-    <Box className="feed-grid">
+    <Box className={`feed-grid ${direction === 'column' && 'column'}`}>
       {videos.map((item, index) => (
         <React.Fragment key={index + 1}>
           {item.id.videoId && <VideoCard video={item} />}

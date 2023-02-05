@@ -1,0 +1,35 @@
+@import '../../utils/responsiveQuery.scss';
+
+#video-detail-page {
+  flex-flow: row;
+  @include mobile {
+    flex-direction: column;
+  }
+
+  .player {
+    height: 77vh !important;
+    width: 136.9vh !important;
+    @include tablet {
+      .player {
+        height: 45vh !important;
+      }
+    }
+  }
+
+  .channel-name {
+    color: #eee;
+    font-size: 1.6rem;
+  }
+  .channel-icon {
+    color: #eeed;
+    font-size: 1.6rem;
+  }
+  .like-icon {
+    color: #eeed;
+    font-size: 3rem;
+  }
+  .suggest-video-list {
+    overflow-y: auto;
+    height: 90vh;
+  }
+}

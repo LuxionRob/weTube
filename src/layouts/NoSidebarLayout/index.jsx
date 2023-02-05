@@ -6,9 +6,9 @@ import './style.scss'
 
 const NoSidebarLayout = () => {
   return (
-    <Box id="no-sidebar-layout">
+    <Box id="no-sidebar-layout" height="100%" minHeight="100vh">
       <Navbar />
-      <Box className="main-section">
+      <Box className="main-section" height="100%">
         <Outlet />
       </Box>
     </Box>

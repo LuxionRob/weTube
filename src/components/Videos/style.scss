@@ -1,34 +1,23 @@
 @import '../../utils//responsiveQuery.scss';
 
-#feed {
+#root {
   .feed-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 2rem;
     padding: 2rem;
-
     @include mobile {
       grid-template-columns: 1fr 1fr;
     }
     @include tablet {
       grid-template-columns: 1fr 1fr;
+    }
+    &.column {
+      grid-template-columns: 1fr;
     }
   }
 }
 
 #channel-page {
   padding-inline: 25rem;
-  .feed-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 2rem;
-    padding: 2rem;
-
-    @include mobile {
-      grid-template-columns: 1fr 1fr;
-    }
-    @include tablet {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
 }
