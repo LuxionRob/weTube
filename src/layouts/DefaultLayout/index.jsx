@@ -1,7 +1,7 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 import { Box } from '@mui/material'
-import { Navbar, Sidebar } from '../../components'
+import { Navbar, Sidebar, ScrollToTop } from '../../components'
 import './style.scss'
 
 const DefaultLayout = () => {
@@ -10,8 +10,12 @@ const DefaultLayout = () => {
       <Navbar />
       <Box className="main-section">
         <Sidebar />
-        <Outlet />
+        <Box className="main-container">
+          <div id="top"></div>
+          <Outlet />
+        </Box>
       </Box>
+      <ScrollToTop />
     </Box>
   )
 }

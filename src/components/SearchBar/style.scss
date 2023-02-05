@@ -1,4 +1,7 @@
 @import '../../utils/responsiveQuery.scss';
+@import '../../utils/constant.scss';
+@import '../../utils/responsiveQuery.scss';
+
 #search {
   border-radius: 2rem;
   font-size: 1.6rem;
@@ -8,16 +11,47 @@
   padding-left: 1.5rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  z-index: 10;
   @include mobile {
-    display: none;
+    border-radius: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 8.4rem;
+    .search-bar {
+      padding-left: 1rem;
+    }
   }
+  &.mobile {
+    border: none;
+    width: max-content;
+    background-color: transparent;
+    &.searching {
+      width: 100vw;
+      background-color: #eee;
+    }
+  }
+}
+#navbar {
   .search-icon {
     padding: 1rem;
-    width: 2rem;
+    margin-right: 0.5rem;
+    font-size: 2rem;
     height: auto;
-    color: red;
+    color: $primary-color;
+    @include mobile {
+      font-size: 2rem;
+    }
   }
-  @media screen and (max-width: 375px) {
-    margin-right: 1rem;
+  .close-icon {
+    padding: 1rem;
+    margin-right: 0.5rem;
+    font-size: 2rem;
+    height: auto;
+    color: $primary-color;
+    @include mobile {
+      font-size: 2rem;
+    }
   }
 }

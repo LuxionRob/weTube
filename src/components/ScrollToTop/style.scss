@@ -1,0 +1,32 @@
+@import '../../utils/responsiveQuery.scss';
+.scroll-button {
+  position: fixed;
+  bottom: 5rem;
+  right: 5rem;
+  background-color: #fc150399;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border: none;
+  &:hover {
+    background-color: #fc1503cc;
+  }
+  @include tablet {
+    bottom: 2rem;
+    right: 2rem;
+  }
+  @include mobile {
+    bottom: 1rem;
+    right: 1rem;
+    width: 4rem;
+    height: 4rem;
+  }
+  .scroll-to-top-icon {
+    color: white;
+    font-size: 3rem;
+  }
+}

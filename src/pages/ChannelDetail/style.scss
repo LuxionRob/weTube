@@ -1,11 +1,12 @@
 @import '../../utils//responsiveQuery.scss';
+@import '../../utils//constant.scss';
 
 #channel-page {
   display: flex;
   flex-direction: column;
   align-items: center;
   .channel-banner {
-    min-width: 100vw;
+    width: calc(100vw - $scroll-bar-width);
     height: 35rem;
     background: linear-gradient(90deg, rgba(158, 32, 254, 1) 0%, rgba(255, 0, 52, 1) 100%);
     @include mobile {

@@ -1,4 +1,6 @@
-:root {
+@import './utils/constant.scss';
+@import './utils/responsiveQuery.scss';
+:root  {
   font-size: 10px;
 }
 
@@ -24,14 +26,21 @@ input {
 }
 
 ::-webkit-scrollbar {
-  width: 0px;
+  width: $scroll-bar-width;
   height: 5px;
+  @include mobile {
+    display: none;
+  }
+  @include tablet {
+    display: none;
+  }
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(114, 113, 113);
+  background-color: $primary-color;
+  opacity: 0.6;
   border-radius: 10px;
-  height: 200px;
+  height: 150px;
 }
 
 ::-webkit-scrollbar-track {
@@ -43,43 +52,10 @@ input {
   color: white !important;
 }
 
-.category-btn:hover span {
-  color: white !important;
-}
-
 .search-bar {
   border: none;
   outline: none;
   width: 350px;
-}
-
-.category-btn {
-  font-weight: bold !important;
-  text-transform: capitalize;
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  cursor: pointer;
-  background: transparent;
-  outline: none;
-  border: none;
-
-  padding: 7px 15px;
-  margin: 10px 0px;
-  border-radius: 20px;
-  transition: all 0.3s ease;
-}
-
-@media screen and (max-width: 900px) {
-  .category-btn {
-    margin: 10px;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .copyright {
-    display: none !important;
-  }
 }
 
 @media screen and (max-width: 600px) {

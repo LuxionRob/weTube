@@ -29,9 +29,6 @@ const SideBar = () => {
           </button>
         ))}
       </Stack>
-      <Typography className="copyright" variant="body2">
-        Copyright 2023 Luxion
-      </Typography>
     </Box>
   )
 }

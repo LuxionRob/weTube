@@ -1,4 +1,5 @@
 @import '../../utils/responsiveQuery.scss';
+@import '../../utils/constant.scss';
 
 #sidebar {
   border-right: 1px solid #3d3d3d;
@@ -22,7 +23,7 @@
     }
 
     span:nth-child(1) {
-      color: #fc1503;
+      color: $primary-color;
       margin-right: 1rem;
       opacity: 1;
       svg {
@@ -39,9 +40,30 @@
       overflow-x: scroll;
       width: 100vw;
     }
+    .category-btn {
+      font-weight: bold !important;
+      text-transform: capitalize;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      cursor: pointer;
+      background: transparent;
+      outline: none;
+      border: none;
 
+      padding: 7px 15px;
+      margin: 10px 0px;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+      &:hover span {
+        color: white !important;
+      }
+      @include mobile {
+        margin: 10px;
+      }
+    }
     .selected {
-      background-color: #fc1503;
+      background-color: $primary-color;
       span {
         opacity: 1;
       }
@@ -49,11 +71,5 @@
         color: white;
       }
     }
-  }
-
-  .copyright {
-    font-size: 1.4rem;
-    color: white;
-    margin-top: 1rem;
   }
 }
